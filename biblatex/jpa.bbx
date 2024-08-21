@@ -803,6 +803,7 @@
     }{}
   }%
   %
+  \usebibmacro{pageref}%
   \usebibmacro{finentry}%
 }
 
@@ -830,6 +831,7 @@
     %    \renewcommand*{\finentrypunct}{}%
   }{\newunit}
   \printlist{publisher}%
+  \usebibmacro{pageref}%
   \usebibmacro{finentry}%
 }
 
@@ -853,6 +855,7 @@
   \usebibmacro{volumes}%
   \newunit
   \printlist{publisher}%
+  \usebibmacro{pageref}%
   \usebibmacro{finentry}%
 }
 
@@ -898,6 +901,7 @@
     }%
   }%
   \printlist{publisher}%
+  \usebibmacro{pageref}%
   \usebibmacro{finentry}%
 }
 
@@ -932,6 +936,7 @@
     \renewcommand{\finentrypunct}{}%
     \printfield{doi}%
   }
+  \usebibmacro{pageref}%
   \usebibmacro{finentry}%
 }
 
@@ -959,6 +964,7 @@
   % 出版社
   \renewcommand*{\finentrypunct}{}%
   \printlist{institution}%
+  \usebibmacro{pageref}%
   \usebibmacro{finentry}%
 }
 %% iv)紀要，その他　→ i)，ii）と同じ
@@ -995,6 +1001,7 @@
     \renewcommand{\finentrypunct}{}%
     \printfield{doi}}%
   \iffieldundef{url}{}{\usebibmacro{url+urldate}}%
+  \usebibmacro{pageref}%
   \usebibmacro{finentry}%
 }
 
@@ -1014,6 +1021,7 @@
   }
   % 大学名修士／博士論文
   \usebibmacro{type+institution}
+  \usebibmacro{pageref}%
   \usebibmacro{finentry}%
 }
 
@@ -1049,6 +1057,7 @@
   \iffieldundef{pages}{}{%
     \printfield{pages}%
   }
+  \usebibmacro{pageref}%
   \usebibmacro{finentry}%
 }
 
@@ -1074,5 +1083,6 @@
   }
   % 掲載ページ
   \printfield{pages}\adddot
+  \usebibmacro{pageref}%
   \usebibmacro{finentry}%
 }
