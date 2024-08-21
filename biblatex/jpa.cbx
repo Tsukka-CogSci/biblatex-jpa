@@ -9,6 +9,9 @@
 % 著者名と出版年の区切りはコンマ
 \DeclareDelimFormat{nameyeardelim}{\addcomma\space}
 
+% ハイパーリンク追加
+\DeclareFieldFormat{citehyperref}{\bibhyperref{#1}}
+
 % 
 %\DeclareDelimFormat{multicitedelim}{\addsemicolon\space}
 
@@ -127,7 +130,7 @@
   % 同じ著者の引用が複数続く場合は区切り文字と出版年のみを表示
   \iffieldequals{namehash}{\cbx@lasthash}{%
     \setunit{\compcitedelim}%
-    \usebibmacro{cite:plabelyear+extradate}}{%
+    \printtext[citehyperref]{\usebibmacro{cite:plabelyear+extradate}}}{%
     % 引用開始
     \ifbool{cbx:parens}
        {\bibcloseparen\global\boolfalse{cbx:parens}}
@@ -150,7 +153,7 @@
           {\usebibmacro{prenote}}
           {}%
     % 出版年
-    \usebibmacro{cite:plabelyear+extradate}%
+    \printtext[citehyperref]{\usebibmacro{cite:plabelyear+extradate}}%
     % 著者名ハッシュの一時保存
     \savefield{namehash}{\cbx@lasthash}%
     \stepcounter{textcitecount}}%
@@ -161,7 +164,7 @@
   \iffieldequals{namehash}{\cbx@lasthash}
   % 同じ著者の引用が複数続く場合は区切り文字と出版年のみを表示
    {\setunit{\compcitedelim}%
-    \usebibmacro{cite:plabelyear+extradate}}{%
+   \printtext[citehyperref]{\usebibmacro{cite:plabelyear+extradate}}}{%
      \ifnameundef{shortauthor}
        {\printnames{labelname}}%
        {\cbx@apa@ifnamesaved
@@ -169,7 +172,7 @@
          {\printnames[labelname]{author}%
           \addspace\printnames[sabrackets]{shortauthor}}}%
        \setunit{\printdelim{nameyeardelim}}%
-      \usebibmacro{cite:plabelyear+extradate}%
+       \printtext[citehyperref]{\usebibmacro{cite:plabelyear+extradate}}%
       \savefield{namehash}{\cbx@lasthash}}%
    \setunit{\multicitedelim}}
 
